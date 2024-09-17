@@ -1,0 +1,48 @@
+.drawer {
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+    border-bottom: 1px solid #8080804a;
+  }
+
+  h3 {
+    color: #534b4b;
+    font-weight: 500;
+  }
+
+  &__cardContainer {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  &__scrollDiv {
+    height: calc(100vh - 175px);
+    overflow: auto;
+    padding: 5px;
+  }
+
+  &__solidDivStyle {
+    height: 53px;
+    width: 53px;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+
+  &__fileInputContainer {
+    position: relative;
+  }
+
+  &__fileInput {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    cursor: pointer;
+  }
+}

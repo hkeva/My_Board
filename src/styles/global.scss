@@ -1,0 +1,56 @@
+//margins
+.mb-10 {
+  margin-bottom: 10px;
+}
+
+//paddings
+.pt-25 {
+  padding-top: 25px;
+}
+
+.pb-25 {
+  padding-bottom: 25px;
+}
+
+.pl-9 {
+  padding-left: 9px;
+}
+
+.pl-10 {
+  padding-left: 10px;
+}
+
+//fonts
+.font-16 {
+  font-size: 16px;
+}
+
+//divider
+.divider {
+  border-bottom: 1px solid #8080804a;
+}
+
+//scrollbar
+/* Apply styles to the scrollbar in WebKit browsers (Chrome, Safari) */
+::-webkit-scrollbar {
+  width: 4px; /* Make the scrollbar thinner */
+}
+
+::-webkit-scrollbar-track {
+  background: #f0f0f0; /* Track color */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c0c0c0; /* Thumb color */
+  border-radius: 2px; /* Smaller rounded corners for a thinner scrollbar */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a0a0a0; /* Thumb color on hover */
+}
+
+/* Apply styles to the scrollbar in Firefox */
+.scrollable-element {
+  scrollbar-width: thin; /* Makes scrollbar thin */
+  scrollbar-color: #c0c0c0 #f0f0f0; /* Thumb color and track color */
+}

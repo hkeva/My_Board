@@ -1,0 +1,28 @@
+.header {
+  background-color: #1a020224;
+  padding: 20px;
+  width: calc(100% - 40px);
+  display: flex;
+  justify-content: space-between;
+
+  h2 {
+    margin: 0;
+    color: #fff;
+  }
+
+  &__changeBGColorIcon {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    background: linear-gradient(
+      90deg,
+      rgba(131, 58, 180, 1) 0%,
+      rgba(122, 130, 209, 1) 11%,
+      rgba(193, 120, 112, 1) 32%,
+      rgba(253, 111, 29, 0.6811318277310925) 50%,
+      rgba(252, 176, 69, 1) 100%
+    );
+    cursor: pointer;
+    border: 2px solid #fff;
+  }
+}
