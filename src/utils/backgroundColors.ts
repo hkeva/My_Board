@@ -65,39 +65,39 @@ export const BackgroundGradients = [
 export const BackgroundColors = [
   {
     name: "subtle-green",
-    color: "#9ACD32",
+    color: "linear-gradient(180deg, #9ACD32 0%, #9ACD32 100%)",
   },
   {
     name: "subtle-orange",
-    color: "#FFA07A",
+    color: "linear-gradient(180deg, #FFA07A 0%, #FFA07A 100%)",
   },
   {
     name: "subtle-blue",
-    color: "#ADD8E6",
+    color: "linear-gradient(180deg, #ADD8E6 0%, #ADD8E6 100%)",
   },
   {
     name: "subtle-red",
-    color: "#FFCCCB",
+    color: "linear-gradient(180deg, #FFCCCB 0%, #FFCCCB 100%)",
   },
   {
     name: "subtle-purple",
-    color: "#D8BFD8",
+    color: "linear-gradient(180deg, #D8BFD8 0%, #D8BFD8 100%)",
   },
   {
     name: "subtle-pink",
-    color: "#FFB6C1",
+    color: "linear-gradient(180deg, #FFB6C1 0%, #FFB6C1 100%)",
   },
   {
     name: "subtle-sky",
-    color: "#B0E0E6",
+    color: "linear-gradient(180deg, #B0E0E6 0%, #B0E0E6 100%)",
   },
   {
     name: "subtle-gray",
-    color: "#D3D3D3",
+    color: "linear-gradient(180deg, #D3D3D3 0%, #D3D3D3 100%)",
   },
   {
     name: "tomato",
-    color: "#FF6347",
+    color: "linear-gradient(180deg, #FF6347 0%, #FF6347 100%)",
   },
 ];
 

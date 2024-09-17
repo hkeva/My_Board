@@ -235,7 +235,7 @@ const CustomDrawer: React.FC<CustomDrawerProps> = ({ open, onClose }) => {
                   <div
                     key={bg.color}
                     className="drawer__solidDivStyle"
-                    style={{ backgroundColor: bg.color }}
+                    style={{ background: bg.color }}
                     onClick={() => handleSolidBGChange(bg.name)}
                   ></div>
                 );
