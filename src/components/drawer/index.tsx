@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useRef, useState } from "react";
-import { Button, Drawer, Input, Spin } from "antd";
+import { Button, Drawer, Input, Spin, Tooltip } from "antd";
 import { CloseOutlined, LeftOutlined, SearchOutlined } from "@ant-design/icons";
 import "./index.scss";
 import ImageCard from "../imageCard";
@@ -192,15 +192,26 @@ const CustomDrawer: React.FC<CustomDrawerProps> = ({ open, onClose }) => {
                 key="colors"
               />
 
-              <div className="drawer__fileInputContainer">
-                <ImageCard title="Custom" backgroundImg={addImg} key="colors" />
-                <input
-                  type="file"
-                  className="drawer__fileInput"
-                  onChange={handleFileChange}
-                  accept="image/png, image/jpeg, image/jpg"
-                />
-              </div>
+              <Tooltip title="Maximum of 2 custom pictures allowed.">
+                <div className="drawer__fileInputContainer">
+                  <ImageCard
+                    title="Custom"
+                    backgroundImg={addImg}
+                    key="colors"
+                  />
+
+                  <input
+                    type="file"
+                    title=""
+                    className={`drawer__fileInput ${
+                      images.length == 2 && "drawer__fileInput__disabled"
+                    }`}
+                    onChange={handleFileChange}
+                    accept="image/png, image/jpeg, image/jpg"
+                    disabled={images.length == 2}
+                  />
+                </div>
+              </Tooltip>
             </div>
             <div className="drawer__cardContainer pl-9">
               {images.map((image, index) => (

@@ -44,5 +44,9 @@
     right: 0;
     opacity: 0;
     cursor: pointer;
+
+    &__disabled {
+      cursor: not-allowed;
+    }
   }
 }
