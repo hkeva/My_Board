@@ -5,6 +5,7 @@ import { BackgroundContext } from "./context/BackgroundContext";
 import { CombinedBackgrounds } from "./utils/backgroundColors";
 import "./styles/global.scss";
 import "./App.scss";
+import Board from "./components/board";
 
 const App: React.FC = () => {
   const [background, setBackground] = useState("greenish");
@@ -37,6 +38,7 @@ const App: React.FC = () => {
       <div className="app" style={divStyle}>
         <Header onDrawerOpen={onDrawerOpen} />
         <CustomDrawer open={isDrawerOpen} onClose={onDrawerClose} />
+        <Board />
       </div>
     </BackgroundContext.Provider>
   );
