@@ -38,6 +38,7 @@ const initialData: BoardData = {
 const Board: React.FC = () => {
   const [boardData, setBoardData] = useState(initialData);
   const [columnCount, setColumnCount] = useState(3);
+  const [editList, setEditList] = useState(false);
 
   const onDragEnd = (result: DropResult) => {
     const { destination, source, draggableId, type } = result;
@@ -148,6 +149,25 @@ const Board: React.FC = () => {
     });
   };
 
+  const onSetListName = (columnId: string, val: string) => {
+    setBoardData((prevData) => {
+      const updatedColumns = {
+        ...prevData.columns,
+        [columnId]: {
+          ...prevData.columns[columnId],
+          title: val,
+        },
+      };
+
+      setEditList(false);
+
+      return {
+        ...prevData,
+        columns: updatedColumns,
+      };
+    });
+  };
+
   return (
     <DragDropContext onDragEnd={onDragEnd}>
       <div className="board">
@@ -189,6 +209,9 @@ const Board: React.FC = () => {
                             tasks={tasks}
                             index={index}
                             onDeleteList={onDeleteList}
+                            setListName={onSetListName}
+                            editList={editList}
+                            setEditList={setEditList}
                           />
                         </div>
                       )}

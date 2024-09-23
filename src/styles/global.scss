@@ -3,6 +3,10 @@
   margin-bottom: 10px;
 }
 
+.mr-5 {
+  margin-right: 5px;
+}
+
 //paddings
 .pt-25 {
   padding-top: 25px;
@@ -20,6 +24,10 @@
   padding-left: 10px;
 }
 
+.p-10 {
+  padding: 10px;
+}
+
 //fonts
 .font-16 {
   font-size: 16px;
@@ -28,6 +36,11 @@
 //divider
 .divider {
   border-bottom: 1px solid #8080804a;
+}
+
+//cursor
+.cursor-pointer {
+  cursor: pointer;
 }
 
 //scrollbar

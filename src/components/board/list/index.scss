@@ -3,7 +3,7 @@
   border-radius: 10px;
   margin: 20px;
   padding: 10px;
-  width: 250px;
+  width: 270px;
   box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.2);
   font-size: 14px;
 
@@ -20,6 +20,11 @@
   &__deleteIcon {
     cursor: pointer;
     padding: 10px 0 10px 10px;
+  }
+
+  &__editIcon {
+    padding: 10px 5px 10px 10px;
+    cursor: pointer;
   }
 
   &__addCardContainer {

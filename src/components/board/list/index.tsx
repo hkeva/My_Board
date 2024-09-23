@@ -1,18 +1,29 @@
-import React from "react";
 import { Droppable, Draggable } from "react-beautiful-dnd";
 import { Column, Task as TaskType } from "../../../types";
 import Task from "../task";
 import "./index.scss";
-import { DeleteTwoTone, PlusOutlined } from "@ant-design/icons";
+import { DeleteTwoTone, EditTwoTone, PlusOutlined } from "@ant-design/icons";
+import Input from "../../input";
 
 interface ListProps {
   column: Column;
   tasks: TaskType[];
   index: number;
   onDeleteList: (id: string) => void;
+  setListName: (columnId: string, val: string) => void;
+  editList: boolean;
+  setEditList: (val: boolean) => void;
 }
 
-const List: React.FC<ListProps> = ({ column, tasks, index, onDeleteList }) => {
+const List: React.FC<ListProps> = ({
+  column,
+  tasks,
+  index,
+  onDeleteList,
+  setListName,
+  editList,
+  setEditList,
+}) => {
   return (
     <Draggable draggableId={column.id} index={index}>
       {(provided) => (
@@ -23,12 +34,26 @@ const List: React.FC<ListProps> = ({ column, tasks, index, onDeleteList }) => {
           className="list"
         >
           <div className="list__header">
-            <h4>{column.title}</h4>
-            <DeleteTwoTone
-              twoToneColor="#ff4d4f"
-              className="list__deleteIcon"
-              onClick={() => onDeleteList(column.id)}
-            />
+            {!editList && <h4>{column.title}</h4>}
+            {editList && (
+              <Input
+                setListName={setListName}
+                columnId={column.id}
+                title={column.title}
+              />
+            )}
+
+            <div>
+              <EditTwoTone
+                className="list__editIcon"
+                onClick={() => setEditList(true)}
+              />
+              <DeleteTwoTone
+                twoToneColor="#ff4d4f"
+                className="list__deleteIcon"
+                onClick={() => onDeleteList(column.id)}
+              />
+            </div>
           </div>
 
           <Droppable droppableId={column.id} type="task">
