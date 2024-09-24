@@ -11,8 +11,9 @@ interface ListProps {
   index: number;
   onDeleteList: (id: string) => void;
   setListName: (columnId: string, val: string) => void;
-  editList: boolean;
-  setEditList: (val: boolean) => void;
+  editListId: string | null;
+  setEditListId: (val: string | null) => void;
+  onAddTask: (id: string) => void;
 }
 
 const List: React.FC<ListProps> = ({
@@ -21,9 +22,14 @@ const List: React.FC<ListProps> = ({
   index,
   onDeleteList,
   setListName,
-  editList,
-  setEditList,
+  editListId,
+  setEditListId,
+  onAddTask,
 }) => {
+  const handleAddTask = (columnId: string) => {
+    onAddTask(columnId);
+  };
+
   return (
     <Draggable draggableId={column.id} index={index}>
       {(provided) => (
@@ -34,8 +40,8 @@ const List: React.FC<ListProps> = ({
           className="list"
         >
           <div className="list__header">
-            {!editList && <h4>{column.title}</h4>}
-            {editList && (
+            {editListId !== column.id && <h4>{column.title}</h4>}
+            {editListId === column.id && (
               <Input
                 setListName={setListName}
                 columnId={column.id}
@@ -46,7 +52,7 @@ const List: React.FC<ListProps> = ({
             <div>
               <EditTwoTone
                 className="list__editIcon"
-                onClick={() => setEditList(true)}
+                onClick={() => setEditListId(column.id)}
               />
               <DeleteTwoTone
                 twoToneColor="#ff4d4f"
@@ -70,7 +76,10 @@ const List: React.FC<ListProps> = ({
               </div>
             )}
           </Droppable>
-          <div className="list__addCardContainer">
+          <div
+            className="list__addCardContainer"
+            onClick={() => handleAddTask(column.id)}
+          >
             <PlusOutlined className="list__addIcon" /> Add a card
           </div>
         </div>

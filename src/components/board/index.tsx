@@ -38,7 +38,7 @@ const initialData: BoardData = {
 const Board: React.FC = () => {
   const [boardData, setBoardData] = useState(initialData);
   const [columnCount, setColumnCount] = useState(3);
-  const [editList, setEditList] = useState(false);
+  const [editListId, setEditListId] = useState<string | null>(null);
 
   const onDragEnd = (result: DropResult) => {
     const { destination, source, draggableId, type } = result;
@@ -159,13 +159,17 @@ const Board: React.FC = () => {
         },
       };
 
-      setEditList(false);
+      setEditListId(null);
 
       return {
         ...prevData,
         columns: updatedColumns,
       };
     });
+  };
+
+  const onAddTask = (columnId: string) => {
+    console.log("columnId ", columnId);
   };
 
   return (
@@ -210,8 +214,9 @@ const Board: React.FC = () => {
                             index={index}
                             onDeleteList={onDeleteList}
                             setListName={onSetListName}
-                            editList={editList}
-                            setEditList={setEditList}
+                            editListId={editListId}
+                            setEditListId={setEditListId}
+                            onAddTask={onAddTask}
                           />
                         </div>
                       )}
