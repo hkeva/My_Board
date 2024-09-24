@@ -5,20 +5,43 @@ import {
   Draggable,
   DropResult,
 } from "react-beautiful-dnd";
-import { BoardData } from "../../types";
+import { BoardData, Task } from "../../types";
 import List from "./list";
 import { PlusOutlined } from "@ant-design/icons";
 import { Button } from "antd";
 import "./index.scss";
+import CreateTaskForm from "./createTaskForm";
 
-const initialData: BoardData = {
+const initialBoardData: BoardData = {
   tasks: {
     "task-1": {
       id: "task-1",
-      content: "Task 1",
+      title:
+        "Conduct Comprehensive Stakeholder Analysis for Upcoming Product Launch",
+      img: [
+        "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=2970&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      ],
     },
-    "task-2": { id: "task-2", content: "Task 2" },
-    "task-3": { id: "task-3", content: "Task 3" },
+    "task-2": {
+      id: "task-2",
+      title: "Implement New Project Tracking Software",
+      img: null,
+    },
+    "task-3": {
+      id: "task-3",
+      title: "Develop Project Risk Management Plan",
+      img: [
+        "https://images.unsplash.com/photo-1542626991-cbc4e32524cc?q=80&w=2969&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      ],
+    },
+    "task-4": {
+      id: "task-4",
+      title: "Organize Team Building Event",
+
+      img: [
+        "https://images.unsplash.com/photo-1516321497487-e288fb19713f?q=80&w=2970&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      ],
+    },
   },
   columns: {
     "column-1": {
@@ -31,14 +54,20 @@ const initialData: BoardData = {
       title: "In Progress",
       taskIds: ["task-3"],
     },
+    "column-3": {
+      id: "column-3",
+      title: "Done",
+      taskIds: ["task-4"],
+    },
   },
-  columnOrder: ["column-1", "column-2"],
+  columnOrder: ["column-1", "column-2", "column-3"],
 };
 
 const Board: React.FC = () => {
-  const [boardData, setBoardData] = useState(initialData);
-  const [columnCount, setColumnCount] = useState(3);
+  const [boardData, setBoardData] = useState(initialBoardData);
+  const [columnCount, setColumnCount] = useState(4);
   const [editListId, setEditListId] = useState<string | null>(null);
+  const [selectedListId, setSelectedListId] = useState<string | null>(null);
 
   const onDragEnd = (result: DropResult) => {
     const { destination, source, draggableId, type } = result;
@@ -169,75 +198,107 @@ const Board: React.FC = () => {
   };
 
   const onAddTask = (columnId: string) => {
-    console.log("columnId ", columnId);
+    setSelectedListId(columnId);
+  };
+
+  const handleAddTask = (taskData: Task) => {
+    const newTaskId = `task-${Object.keys(boardData.tasks).length + 1}`;
+
+    const newTask: Task = {
+      id: newTaskId,
+      title: taskData.title,
+      img: taskData.img,
+    };
+
+    setBoardData((prevData) => ({
+      ...prevData,
+      tasks: {
+        ...prevData.tasks,
+        [newTaskId]: newTask,
+      },
+      columns: {
+        ...prevData.columns,
+        [selectedListId!]: {
+          ...prevData.columns[selectedListId!],
+          taskIds: [...prevData.columns[selectedListId!].taskIds, newTaskId],
+        },
+      },
+    }));
   };
 
   return (
-    <DragDropContext onDragEnd={onDragEnd}>
-      <div className="board">
-        <div>
-          <Droppable
-            droppableId="all-columns"
-            direction="horizontal"
-            type="column"
+    <>
+      <DragDropContext onDragEnd={onDragEnd}>
+        <div className="board">
+          <div>
+            <Droppable
+              droppableId="all-columns"
+              direction="horizontal"
+              type="column"
+            >
+              {(provided) => (
+                <div
+                  {...provided.droppableProps}
+                  ref={provided.innerRef}
+                  className="board__lists"
+                >
+                  {boardData.columnOrder.map((columnId, index) => {
+                    const column = boardData.columns[columnId];
+                    const tasks = column.taskIds.map(
+                      (taskId) => boardData.tasks[taskId]
+                    );
+
+                    return (
+                      <Draggable
+                        draggableId={column.id}
+                        index={index}
+                        key={column.id}
+                      >
+                        {(provided) => (
+                          <div
+                            ref={provided.innerRef}
+                            {...provided.draggableProps}
+                            {...provided.dragHandleProps}
+                            style={{
+                              margin: "0 8px",
+                            }}
+                          >
+                            <List
+                              column={column}
+                              tasks={tasks}
+                              index={index}
+                              onDeleteList={onDeleteList}
+                              setListName={onSetListName}
+                              editListId={editListId}
+                              setEditListId={setEditListId}
+                              onAddTask={onAddTask}
+                            />
+                          </div>
+                        )}
+                      </Draggable>
+                    );
+                  })}
+
+                  {provided.placeholder}
+                </div>
+              )}
+            </Droppable>
+          </div>
+          <Button
+            icon={<PlusOutlined />}
+            className="board__addListBtn"
+            onClick={onAddListHandler}
           >
-            {(provided) => (
-              <div
-                {...provided.droppableProps}
-                ref={provided.innerRef}
-                className="board__lists"
-              >
-                {boardData.columnOrder.map((columnId, index) => {
-                  const column = boardData.columns[columnId];
-                  const tasks = column.taskIds.map(
-                    (taskId) => boardData.tasks[taskId]
-                  );
-
-                  return (
-                    <Draggable
-                      draggableId={column.id}
-                      index={index}
-                      key={column.id}
-                    >
-                      {(provided) => (
-                        <div
-                          ref={provided.innerRef}
-                          {...provided.draggableProps}
-                          {...provided.dragHandleProps}
-                          style={{
-                            margin: "0 8px",
-                          }}
-                        >
-                          <List
-                            column={column}
-                            tasks={tasks}
-                            index={index}
-                            onDeleteList={onDeleteList}
-                            setListName={onSetListName}
-                            editListId={editListId}
-                            setEditListId={setEditListId}
-                            onAddTask={onAddTask}
-                          />
-                        </div>
-                      )}
-                    </Draggable>
-                  );
-                })}
-
-                {provided.placeholder}
-              </div>
-            )}
-          </Droppable>
+            <h4>Add another list</h4>
+          </Button>
         </div>
-        <Button
-          icon={<PlusOutlined />}
-          className="board__addListBtn"
-          onClick={onAddListHandler}
-        >
-          <h4>Add another list</h4>
-        </Button>
-      </div>
-    </DragDropContext>
+      </DragDropContext>
+      <CreateTaskForm
+        visible={selectedListId ? true : false}
+        setVisible={setSelectedListId}
+        onAddTask={handleAddTask}
+      />
+    </>
   );
 };
 
