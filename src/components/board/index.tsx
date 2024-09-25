@@ -226,6 +226,27 @@ const Board: React.FC = () => {
     }));
   };
 
+  const handleDeleteTask = (taskId: string, columnId: string) => {
+    const updatedTasks = { ...boardData.tasks };
+    delete updatedTasks[taskId];
+
+    const updatedColumns = { ...boardData.columns };
+    const updatedTaskIds = updatedColumns[columnId].taskIds.filter(
+      (id) => id !== taskId
+    );
+
+    updatedColumns[columnId] = {
+      ...updatedColumns[columnId],
+      taskIds: updatedTaskIds,
+    };
+
+    setBoardData({
+      ...boardData,
+      tasks: updatedTasks,
+      columns: updatedColumns,
+    });
+  };
+
   return (
     <>
       <DragDropContext onDragEnd={onDragEnd}>
@@ -272,6 +293,7 @@ const Board: React.FC = () => {
                               editListId={editListId}
                               setEditListId={setEditListId}
                               onAddTask={onAddTask}
+                              onDeleteTask={handleDeleteTask}
                             />
                           </div>
                         )}

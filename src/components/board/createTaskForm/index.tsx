@@ -67,7 +67,10 @@ const CreateTaskForm: React.FC<CreateTaskFormProps> = ({
         <Form.Item
           label="Title"
           name="title"
-          rules={[{ required: true, message: "Please input your title!" }]}
+          rules={[
+            { required: true, message: "Please input your title!" },
+            { max: 100, message: "Title cannot be more than 100 characters!" },
+          ]}
         >
           <Input />
         </Form.Item>
@@ -77,6 +80,10 @@ const CreateTaskForm: React.FC<CreateTaskFormProps> = ({
           name="description"
           rules={[
             { required: true, message: "Please input your description!" },
+            {
+              max: 500,
+              message: "Description cannot be more than 500 characters!",
+            },
           ]}
         >
           <Input.TextArea />
@@ -90,6 +97,7 @@ const CreateTaskForm: React.FC<CreateTaskFormProps> = ({
         >
           <Upload
             multiple
+            accept=".jpg,.jpeg,.png"
             beforeUpload={beforeUpload}
             onChange={handleChange}
             showUploadList={{ showPreviewIcon: true }}

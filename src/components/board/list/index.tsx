@@ -14,6 +14,7 @@ interface ListProps {
   editListId: string | null;
   setEditListId: (val: string | null) => void;
   onAddTask: (id: string) => void;
+  onDeleteTask: (taskId: string, columnId: string) => void;
 }
 
 const List: React.FC<ListProps> = ({
@@ -25,6 +26,7 @@ const List: React.FC<ListProps> = ({
   editListId,
   setEditListId,
   onAddTask,
+  onDeleteTask,
 }) => {
   const handleAddTask = (columnId: string) => {
     onAddTask(columnId);
@@ -70,7 +72,13 @@ const List: React.FC<ListProps> = ({
                 className="list__taskContainer"
               >
                 {tasks.map((task, index) => (
-                  <Task key={task.id} task={task} index={index} />
+                  <Task
+                    key={task.id}
+                    task={task}
+                    index={index}
+                    columnId={column.id}
+                    onDeleteTask={onDeleteTask}
+                  />
                 ))}
                 {provided.placeholder}
               </div>

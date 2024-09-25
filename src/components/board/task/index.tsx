@@ -8,11 +8,13 @@ import "./index.scss";
 interface TaskProps {
   task: TaskType;
   index: number;
+  columnId: string;
+  onDeleteTask: (taskId: string, columnId: string) => void;
 }
 
 const { Text } = Typography;
 
-const Task: React.FC<TaskProps> = ({ task, index }) => {
+const Task: React.FC<TaskProps> = ({ task, index, columnId, onDeleteTask }) => {
   const truncatedText =
     task.title.length > 45 ? task.title.substring(0, 45) + "..." : task.title;
 
@@ -40,7 +42,12 @@ const Task: React.FC<TaskProps> = ({ task, index }) => {
             <EditTwoTone />
           </div>
 
-          <div className="task__iconWrapper task__deleteIcon">
+          <div
+            className="task__iconWrapper task__deleteIcon"
+            onClick={() => {
+              onDeleteTask(task.id, columnId);
+            }}
+          >
             <DeleteTwoTone twoToneColor="#ff4d4f" />
           </div>
         </div>
