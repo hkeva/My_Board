@@ -4,6 +4,7 @@ import Task from "../task";
 import "./index.scss";
 import { DeleteTwoTone, EditTwoTone, PlusOutlined } from "@ant-design/icons";
 import Input from "../../input";
+import { useRef } from "react";
 
 interface ListProps {
   column: Column;
@@ -32,13 +33,27 @@ const List: React.FC<ListProps> = ({
     onAddTask(columnId);
   };
 
+  const listRef = useRef<HTMLDivElement | null>(null);
+
   return (
     <Draggable draggableId={column.id} index={index}>
-      {(provided) => (
+      {(provided, snapshot) => (
         <div
+          ref={(el) => {
+            provided.innerRef(el);
+            listRef.current = el;
+          }}
           {...provided.draggableProps}
-          ref={provided.innerRef}
           {...provided.dragHandleProps}
+          style={{
+            ...provided.draggableProps.style,
+            height: snapshot.isDragging
+              ? `${listRef.current?.offsetHeight || "auto"}px`
+              : "auto",
+            width: snapshot.isDragging
+              ? `${listRef.current?.offsetWidth || "290"}px`
+              : "290px",
+          }}
           className="list"
         >
           <div className="list__header">
