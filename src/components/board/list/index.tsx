@@ -51,8 +51,8 @@ const List: React.FC<ListProps> = ({
               ? `${listRef.current?.offsetHeight || "auto"}px`
               : "auto",
             width: snapshot.isDragging
-              ? `${listRef.current?.offsetWidth || "290"}px`
-              : "290px",
+              ? `${listRef.current?.offsetWidth || "275"}px`
+              : "275px",
           }}
           className="list"
         >
