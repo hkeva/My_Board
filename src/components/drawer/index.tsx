@@ -23,7 +23,7 @@ interface Photo {
   id: string;
   urls: {
     small: string;
-    full?: string;
+    regular?: string;
   };
 }
 
@@ -276,7 +276,7 @@ const CustomDrawer: React.FC<CustomDrawerProps> = ({ open, onClose }) => {
               <ImageCard
                 key={photo?.id}
                 backgroundImg={photo?.urls?.small}
-                setImageBG={photo?.urls?.full}
+                setImageBG={photo?.urls?.regular}
               />
             ))}
 
