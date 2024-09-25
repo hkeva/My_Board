@@ -27,7 +27,8 @@ const initialBoardData: BoardData = {
     },
     "task-2": {
       id: "task-2",
-      title: "Implement New Project Tracking Software",
+      title:
+        "Implement a Fully Responsive Design Across All Components and Pages to Enhance User Experience on Mobile Devices",
       img: null,
       description:
         "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nihil possimus accusamus voluptate ad, iusto fuga vel consectetur suscipit quia aut voluptatum a debitis facere quam officia praesentium delectus est aperiam, blanditiis assumenda. Praesentium, harum, ipsam quis veritatis unde in, delectus autem beatae illum alias ullam. Hic praesentium minima obcaecati, assumenda vero molestiae et corporis voluptatem voluptatibus sapiente tempora, dolorem consequatur. Totam, ut, nemo iusto repudiandae mollitia aut exercitationem, perferendis saepe dolorem sed similique? Quaerat blanditiis deserunt ut sequi perferendis eum omnis, soluta libero officia in praesentium eos amet sunt. Ex perspiciatis consectetur quidem laborum iusto harum modi tempora molestias quis?",
@@ -62,14 +63,16 @@ const initialBoardData: BoardData = {
     },
     "task-6": {
       id: "task-6",
-      title: "Implement New Project Tracking Software",
+      title:
+        "Design a Robust Database Schema that Supports Future Scalability and Optimizes Query Performance for High Traffic",
       img: null,
       description:
         "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nihil possimus accusamus voluptate ad, iusto fuga vel consectetur suscipit quia aut voluptatum a debitis facere quam officia praesentium delectus est aperiam, blanditiis assumenda. Praesentium, harum, ipsam quis veritatis unde in, delectus autem beatae illum alias ullam. Hic praesentium minima obcaecati, assumenda vero molestiae et corporis voluptatem voluptatibus sapiente tempora, dolorem consequatur. Totam, ut, nemo iusto repudiandae mollitia aut exercitationem, perferendis saepe dolorem sed similique? Quaerat blanditiis deserunt ut sequi perferendis eum omnis, soluta libero officia in praesentium eos amet sunt. Ex perspiciatis consectetur quidem laborum iusto harum modi tempora molestias quis?",
     },
     "task-7": {
       id: "task-7",
-      title: "Implement New Project Tracking Software",
+      title:
+        "Develop a Comprehensive User Authentication Flow with Multi-Factor Authentication and Social Login Options",
       img: null,
       description:
         "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nihil possimus accusamus voluptate ad, iusto fuga vel consectetur suscipit quia aut voluptatum a debitis facere quam officia praesentium delectus est aperiam, blanditiis assumenda. Praesentium, harum, ipsam quis veritatis unde in, delectus autem beatae illum alias ullam. Hic praesentium minima obcaecati, assumenda vero molestiae et corporis voluptatem voluptatibus sapiente tempora, dolorem consequatur. Totam, ut, nemo iusto repudiandae mollitia aut exercitationem, perferendis saepe dolorem sed similique? Quaerat blanditiis deserunt ut sequi perferendis eum omnis, soluta libero officia in praesentium eos amet sunt. Ex perspiciatis consectetur quidem laborum iusto harum modi tempora molestias quis?",
@@ -84,7 +87,7 @@ const initialBoardData: BoardData = {
     "column-2": {
       id: "column-2",
       title: "In Progress",
-      taskIds: ["task-3", "task-4", "task-6"],
+      taskIds: ["task-3", "task-4", "task-5"],
     },
     "column-3": {
       id: "column-3",
