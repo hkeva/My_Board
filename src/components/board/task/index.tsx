@@ -5,28 +5,41 @@ import { DeleteTwoTone, EditTwoTone } from "@ant-design/icons";
 import { Typography } from "antd";
 import "./index.scss";
 import DetailsModal from "../detailsModal";
+import CreateTaskForm from "../createTaskForm";
 
 interface TaskProps {
   task: TaskType;
   index: number;
   columnId: string;
   onDeleteTask: (taskId: string, columnId: string) => void;
+  onHandleEditTask: (taskData: TaskType) => void;
 }
 
 const { Text } = Typography;
 
-const Task: React.FC<TaskProps> = ({ task, index, columnId, onDeleteTask }) => {
-  const [isModalVisible, setIsModalVisible] = useState(false);
+const Task: React.FC<TaskProps> = ({
+  task,
+  index,
+  columnId,
+  onDeleteTask,
+  onHandleEditTask,
+}) => {
+  const [isDetailsModalVisible, setDetailsModalVisible] = useState(false);
+  const [editDetails, setEditDetails] = useState<TaskType | null>(null);
 
   const truncatedText =
     task.title.length > 45 ? task.title.substring(0, 45) + "..." : task.title;
 
   const showModal = () => {
-    setIsModalVisible(true);
+    setDetailsModalVisible(true);
   };
 
   const handleCancel = () => {
-    setIsModalVisible(false);
+    setDetailsModalVisible(false);
+  };
+
+  const handleTaskEdit = (task: TaskType) => {
+    setEditDetails(task);
   };
 
   return (
@@ -44,14 +57,21 @@ const Task: React.FC<TaskProps> = ({ task, index, columnId, onDeleteTask }) => {
             onClick={showModal}
           >
             <div className="task__contentContainer">
-              {task.img && (
+              {task.img && task.img.length > 0 && (
                 <div className="task__imageContainer">
-                  <img src={task?.img[0]} />
+                  <img src={task.img[0]} alt="Task Image" />
                 </div>
               )}
               <Text className="task__title">{truncatedText}</Text>
             </div>
-            <div className="task__iconWrapper task__editIcon">
+
+            <div
+              className="task__iconWrapper task__editIcon"
+              onClick={(e) => {
+                e.stopPropagation();
+                handleTaskEdit(task);
+              }}
+            >
               <EditTwoTone />
             </div>
 
@@ -67,9 +87,14 @@ const Task: React.FC<TaskProps> = ({ task, index, columnId, onDeleteTask }) => {
         )}
       </Draggable>
       <DetailsModal
-        visible={isModalVisible}
+        visible={isDetailsModalVisible}
         task={task}
         onCancel={handleCancel}
+      />
+      <CreateTaskForm
+        editDetails={editDetails}
+        setEditDetails={setEditDetails}
+        onAddTask={onHandleEditTask}
       />
     </>
   );

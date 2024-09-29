@@ -16,6 +16,7 @@ interface ListProps {
   setEditListId: (val: string | null) => void;
   onAddTask: (id: string) => void;
   onDeleteTask: (taskId: string, columnId: string) => void;
+  onHandleEditTask: (taskData: TaskType, existingImages?: string[]) => void;
 }
 
 const List: React.FC<ListProps> = ({
@@ -28,6 +29,7 @@ const List: React.FC<ListProps> = ({
   setEditListId,
   onAddTask,
   onDeleteTask,
+  onHandleEditTask,
 }) => {
   const handleAddTask = (columnId: string) => {
     onAddTask(columnId);
@@ -93,6 +95,7 @@ const List: React.FC<ListProps> = ({
                     index={index}
                     columnId={column.id}
                     onDeleteTask={onDeleteTask}
+                    onHandleEditTask={onHandleEditTask}
                   />
                 ))}
                 {provided.placeholder}

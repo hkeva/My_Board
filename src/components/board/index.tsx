@@ -23,7 +23,7 @@ const initialBoardData: BoardData = {
         "https://images.unsplash.com/photo-1542626991-cbc4e32524cc?q=80&w=2969&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       ],
       description:
-        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nihil possimus accusamus voluptate ad, iusto fuga vel consectetur suscipit quia aut voluptatum a debitis facere quam officia praesentium delectus est aperiam, blanditiis assumenda. Praesentium, harum, ipsam quis veritatis unde in, delectus autem beatae illum alias ullam. Hic praesentium minima obcaecati, assumenda vero molestiae et corporis voluptatem voluptatibus sapiente tempora, dolorem consequatur. Totam, ut, nemo iusto repudiandae mollitia aut exercitationem, perferendis saepe dolorem sed similique? Quaerat blanditiis deserunt ut sequi perferendis eum omnis, soluta libero officia in praesentium eos amet sunt. Ex perspiciatis consectetur quidem laborum iusto harum modi tempora molestias quis?",
+        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nihil possimus accusamus voluptate ad",
     },
     "task-2": {
       id: "task-2",
@@ -31,7 +31,7 @@ const initialBoardData: BoardData = {
         "Implement a Fully Responsive Design Across All Components and Pages to Enhance User Experience on Mobile Devices",
       img: null,
       description:
-        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nihil possimus accusamus voluptate ad, iusto fuga vel consectetur suscipit quia aut voluptatum a debitis facere quam officia praesentium delectus est aperiam, blanditiis assumenda. Praesentium, harum, ipsam quis veritatis unde in, delectus autem beatae illum alias ullam. Hic praesentium minima obcaecati, assumenda vero molestiae et corporis voluptatem voluptatibus sapiente tempora, dolorem consequatur. Totam, ut, nemo iusto repudiandae mollitia aut exercitationem, perferendis saepe dolorem sed similique? Quaerat blanditiis deserunt ut sequi perferendis eum omnis, soluta libero officia in praesentium eos amet sunt. Ex perspiciatis consectetur quidem laborum iusto harum modi tempora molestias quis?",
+        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nihil possimus accusamus voluptate ad",
     },
     "task-3": {
       id: "task-3",
@@ -40,7 +40,7 @@ const initialBoardData: BoardData = {
         "https://images.unsplash.com/photo-1542626991-cbc4e32524cc?q=80&w=2969&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       ],
       description:
-        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nihil possimus accusamus voluptate ad, iusto fuga vel consectetur suscipit quia aut voluptatum a debitis facere quam officia praesentium delectus est aperiam, blanditiis assumenda. Praesentium, harum, ipsam quis veritatis unde in, delectus autem beatae illum alias ullam. Hic praesentium minima obcaecati, assumenda vero molestiae et corporis voluptatem voluptatibus sapiente tempora, dolorem consequatur. Totam, ut, nemo iusto repudiandae mollitia aut exercitationem, perferendis saepe dolorem sed similique? Quaerat blanditiis deserunt ut sequi perferendis eum omnis, soluta libero officia in praesentium eos amet sunt. Ex perspiciatis consectetur quidem laborum iusto harum modi tempora molestias quis?",
+        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nihil possimus accusamus voluptate ad",
     },
     "task-4": {
       id: "task-4",
@@ -49,7 +49,7 @@ const initialBoardData: BoardData = {
         "https://images.unsplash.com/photo-1516321497487-e288fb19713f?q=80&w=2970&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       ],
       description:
-        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nihil possimus accusamus voluptate ad, iusto fuga vel consectetur suscipit quia aut voluptatum a debitis facere quam officia praesentium delectus est aperiam, blanditiis assumenda. Praesentium, harum, ipsam quis veritatis unde in, delectus autem beatae illum alias ullam. Hic praesentium minima obcaecati, assumenda vero molestiae et corporis voluptatem voluptatibus sapiente tempora, dolorem consequatur. Totam, ut, nemo iusto repudiandae mollitia aut exercitationem, perferendis saepe dolorem sed similique? Quaerat blanditiis deserunt ut sequi perferendis eum omnis, soluta libero officia in praesentium eos amet sunt. Ex perspiciatis consectetur quidem laborum iusto harum modi tempora molestias quis?",
+        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nihil possimus accusamus voluptate ad",
     },
     "task-5": {
       id: "task-5",
@@ -59,7 +59,7 @@ const initialBoardData: BoardData = {
         "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=2970&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       ],
       description:
-        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nihil possimus accusamus voluptate ad, iusto fuga vel consectetur suscipit quia aut voluptatum a debitis facere quam officia praesentium delectus est aperiam, blanditiis assumenda. Praesentium, harum, ipsam quis veritatis unde in, delectus autem beatae illum alias ullam. Hic praesentium minima obcaecati, assumenda vero molestiae et corporis voluptatem voluptatibus sapiente tempora, dolorem consequatur. Totam, ut, nemo iusto repudiandae mollitia aut exercitationem, perferendis saepe dolorem sed similique? Quaerat blanditiis deserunt ut sequi perferendis eum omnis, soluta libero officia in praesentium eos amet sunt. Ex perspiciatis consectetur quidem laborum iusto harum modi tempora molestias quis?",
+        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nihil possimus accusamus voluptate ad",
     },
     "task-6": {
       id: "task-6",
@@ -67,7 +67,7 @@ const initialBoardData: BoardData = {
         "Design a Robust Database Schema that Supports Future Scalability and Optimizes Query Performance for High Traffic",
       img: null,
       description:
-        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nihil possimus accusamus voluptate ad, iusto fuga vel consectetur suscipit quia aut voluptatum a debitis facere quam officia praesentium delectus est aperiam, blanditiis assumenda. Praesentium, harum, ipsam quis veritatis unde in, delectus autem beatae illum alias ullam. Hic praesentium minima obcaecati, assumenda vero molestiae et corporis voluptatem voluptatibus sapiente tempora, dolorem consequatur. Totam, ut, nemo iusto repudiandae mollitia aut exercitationem, perferendis saepe dolorem sed similique? Quaerat blanditiis deserunt ut sequi perferendis eum omnis, soluta libero officia in praesentium eos amet sunt. Ex perspiciatis consectetur quidem laborum iusto harum modi tempora molestias quis?",
+        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nihil possimus accusamus voluptate ad",
     },
     "task-7": {
       id: "task-7",
@@ -75,7 +75,7 @@ const initialBoardData: BoardData = {
         "Develop a Comprehensive User Authentication Flow with Multi-Factor Authentication and Social Login Options",
       img: null,
       description:
-        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nihil possimus accusamus voluptate ad, iusto fuga vel consectetur suscipit quia aut voluptatum a debitis facere quam officia praesentium delectus est aperiam, blanditiis assumenda. Praesentium, harum, ipsam quis veritatis unde in, delectus autem beatae illum alias ullam. Hic praesentium minima obcaecati, assumenda vero molestiae et corporis voluptatem voluptatibus sapiente tempora, dolorem consequatur. Totam, ut, nemo iusto repudiandae mollitia aut exercitationem, perferendis saepe dolorem sed similique? Quaerat blanditiis deserunt ut sequi perferendis eum omnis, soluta libero officia in praesentium eos amet sunt. Ex perspiciatis consectetur quidem laborum iusto harum modi tempora molestias quis?",
+        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nihil possimus accusamus voluptate ad",
     },
   },
   columns: {
@@ -240,7 +240,7 @@ const Board: React.FC = () => {
     const newTaskId = `task-${Object.keys(boardData.tasks).length + 1}`;
 
     const newTask: Task = {
-      id: newTaskId,
+      id: taskData.id ?? newTaskId,
       title: taskData.title,
       img: taskData.img,
       description: taskData.description,
@@ -281,6 +281,23 @@ const Board: React.FC = () => {
       tasks: updatedTasks,
       columns: updatedColumns,
     });
+  };
+
+  const handleEditTask = (taskData: Task, existingImages: string[]) => {
+    const newTask: Task = {
+      id: taskData.id,
+      title: taskData.title,
+      img: [...(taskData.img ?? []), ...(existingImages ?? [])],
+      description: taskData.description,
+    };
+
+    setBoardData((prevData) => ({
+      ...prevData,
+      tasks: {
+        ...prevData.tasks,
+        [taskData.id]: newTask,
+      },
+    }));
   };
 
   return (
@@ -330,6 +347,7 @@ const Board: React.FC = () => {
                               setEditListId={setEditListId}
                               onAddTask={onAddTask}
                               onDeleteTask={handleDeleteTask}
+                              onHandleEditTask={handleEditTask}
                             />
                           </div>
                         )}

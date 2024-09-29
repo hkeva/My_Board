@@ -2,10 +2,13 @@
   &__imageContainer {
     background-color: #000;
     border-radius: 3px;
+    height: 370px;
   }
 
   &__image {
     width: 100% !important;
+    height: 100%;
+    object-fit: cover;
     border-radius: 3px;
   }
 

@@ -1,25 +1,31 @@
-import React, { useState } from "react";
-import { Form, Input, Upload, Button, message, Modal } from "antd";
-import { UploadOutlined } from "@ant-design/icons";
+import React, { useEffect, useState } from "react";
+import { Form, Input, Upload, Button, message, Modal, Tooltip } from "antd";
+import { CloseOutlined, UploadOutlined } from "@ant-design/icons";
 import { Task } from "../../../types";
 import { UploadChangeParam } from "antd/es/upload";
-
+import "./index.scss";
 interface CreateTaskFormProps {
-  visible: boolean;
-  setVisible: (val: string | null) => void;
-  onAddTask: (taskData: Task) => void;
+  visible?: boolean;
+  setVisible?: (val: string | null) => void;
+  onAddTask: (taskData: Task, existingImages?: string[]) => void;
+  editDetails?: Task | null;
+  setEditDetails?: (val: Task | null) => void;
 }
 
 const CreateTaskForm: React.FC<CreateTaskFormProps> = ({
   visible,
   setVisible,
   onAddTask,
+  editDetails,
+  setEditDetails,
 }) => {
   const [form] = Form.useForm<Task>();
   const [images, setImages] = useState<File[]>([]);
+  const [existingImages, setExistingImages] = useState<string[] | null>([]);
 
   const handleCancel = () => {
-    setVisible(null);
+    if (setVisible) setVisible(null);
+    if (setEditDetails) setEditDetails(null);
     form.resetFields();
     setImages([]);
   };
@@ -32,9 +38,10 @@ const CreateTaskForm: React.FC<CreateTaskFormProps> = ({
     const taskData: Task = {
       ...values,
       img: imgSrc.length > 0 ? imgSrc : null,
+      ...(editDetails ? { id: editDetails.id } : {}),
     };
 
-    onAddTask(taskData);
+    onAddTask(taskData, existingImages);
     handleCancel();
   };
 
@@ -51,18 +58,46 @@ const CreateTaskForm: React.FC<CreateTaskFormProps> = ({
     setImages(fileList.map((file: any) => file.originFileObj).filter(Boolean));
   };
 
+  useEffect(() => {
+    if (editDetails) {
+      form.setFieldsValue({
+        title: editDetails.title,
+        description: editDetails.description,
+      });
+      setExistingImages(editDetails.img);
+    } else {
+      form.resetFields();
+    }
+  }, [editDetails, form]);
+
+  const handleDeleteExistingImage = (imageToDelete: string) => {
+    if (!existingImages) return;
+
+    const updatedImages = existingImages?.filter(
+      (image) => image !== imageToDelete
+    );
+    setExistingImages(updatedImages.length > 0 ? updatedImages : null);
+  };
+
+  const handleDeleteImage = (index: number) => {
+    setImages((prevImages) => prevImages.filter((_, i) => i !== index));
+  };
+
   return (
     <Modal
       title="Upload Images"
-      open={visible}
+      open={visible || editDetails ? true : false}
       footer={null}
       onCancel={handleCancel}
+      className="createTask"
     >
       <Form
         form={form}
         layout="vertical"
         onFinish={onFinish}
-        initialValues={{ images: [] }}
+        initialValues={{
+          images: [],
+        }}
       >
         <Form.Item
           label="Title"
@@ -101,17 +136,51 @@ const CreateTaskForm: React.FC<CreateTaskFormProps> = ({
             beforeUpload={beforeUpload}
             onChange={handleChange}
             showUploadList={{ showPreviewIcon: true }}
+            itemRender={() => null}
             customRequest={({ file, onSuccess }) => {
               setTimeout(() => {
                 if (onSuccess) {
                   onSuccess(file);
                 }
-              }, 1000);
+              }, 500);
             }}
           >
-            <Button icon={<UploadOutlined />}>Upload</Button>
+            <Tooltip
+              title={images.length > 0 ? "" : "You can upload more than one"}
+            >
+              <Button icon={<UploadOutlined />}>Upload</Button>
+            </Tooltip>
           </Upload>
         </Form.Item>
+
+        <div className="createTask__imageContainer">
+          {images.map((image, index) => {
+            return (
+              <div className="createTask__image">
+                <img src={URL.createObjectURL(image)} />
+                <div
+                  className="createTask__deleteIconContainer"
+                  onClick={() => handleDeleteImage(index)}
+                >
+                  <CloseOutlined className="createTask__deleteIcon" />
+                </div>
+              </div>
+            );
+          })}
+          {existingImages?.map((image) => {
+            return (
+              <div className="createTask__image">
+                <img src={image} />
+                <div
+                  className="createTask__deleteIconContainer"
+                  onClick={() => handleDeleteExistingImage(image)}
+                >
+                  <CloseOutlined className="createTask__deleteIcon" />
+                </div>
+              </div>
+            );
+          })}
+        </div>
 
         <Form.Item>
           <Button type="primary" htmlType="submit">
