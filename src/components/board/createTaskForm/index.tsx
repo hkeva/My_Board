@@ -41,7 +41,7 @@ const CreateTaskForm: React.FC<CreateTaskFormProps> = ({
       ...(editDetails ? { id: editDetails.id } : {}),
     };
 
-    onAddTask(taskData, existingImages);
+    onAddTask(taskData, existingImages || undefined);
     handleCancel();
   };
 

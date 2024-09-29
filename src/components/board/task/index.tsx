@@ -12,7 +12,7 @@ interface TaskProps {
   index: number;
   columnId: string;
   onDeleteTask: (taskId: string, columnId: string) => void;
-  onHandleEditTask: (taskData: TaskType) => void;
+  onHandleEditTask: (taskData: TaskType, existingImages?: string[]) => void;
 }
 
 const { Text } = Typography;

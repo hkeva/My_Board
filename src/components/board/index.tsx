@@ -283,10 +283,7 @@ const Board: React.FC = () => {
     });
   };
 
-  const handleEditTask = (
-    taskData: Task,
-    existingImages: string[] | undefined
-  ) => {
+  const handleEditTask = (taskData: Task, existingImages: string[] = []) => {
     const newTask: Task = {
       id: taskData.id,
       title: taskData.title,
