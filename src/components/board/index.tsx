@@ -23,7 +23,7 @@ const initialBoardData: BoardData = {
         "https://images.unsplash.com/photo-1542626991-cbc4e32524cc?q=80&w=2969&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       ],
       description:
-        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nihil possimus accusamus voluptate ad",
+        "Revamp the company’s website to enhance user experience and increase engagement. This involves conducting a thorough analysis of the current site’s performance, gathering user feedback, and implementing changes that improve navigation, aesthetics, and functionality. Utilize modern design principles and responsive layouts to ensure compatibility across devices. Incorporate SEO best practices to boost search engine rankings and optimize page loading speeds for better accessibility.",
     },
     "task-2": {
       id: "task-2",
@@ -31,7 +31,7 @@ const initialBoardData: BoardData = {
         "Implement a Fully Responsive Design Across All Components and Pages to Enhance User Experience on Mobile Devices",
       img: null,
       description:
-        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nihil possimus accusamus voluptate ad",
+        "Develop a series of engaging blog posts focusing on industry trends, company updates, and informative how-tos that resonate with the target audience. Research relevant topics, draft outlines, and produce high-quality content that aligns with the company’s voice and brand identity. Incorporate visuals, infographics, and links to enhance readability and engagement. Schedule regular posts, promote them on social media, and monitor performance metrics to assess reader interest and adjust strategies accordingly.",
     },
     "task-3": {
       id: "task-3",
@@ -40,7 +40,7 @@ const initialBoardData: BoardData = {
         "https://images.unsplash.com/photo-1542626991-cbc4e32524cc?q=80&w=2969&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       ],
       description:
-        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nihil possimus accusamus voluptate ad",
+        "Design and implement a comprehensive social media marketing campaign aimed at increasing brand awareness and engagement across various platforms. Define clear objectives, identify target demographics, and select appropriate channels to reach them effectively. Create compelling content, including graphics, videos, and captions that resonate with the audience. Monitor engagement metrics, respond to user interactions, and adjust strategies based on performance analytics to ensure optimal reach and impact.",
     },
     "task-4": {
       id: "task-4",
@@ -49,7 +49,7 @@ const initialBoardData: BoardData = {
         "https://images.unsplash.com/photo-1516321497487-e288fb19713f?q=80&w=2970&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       ],
       description:
-        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nihil possimus accusamus voluptate ad",
+        "Conduct in-depth market research to understand current trends, consumer preferences, and competitor strategies in the industry. Utilize surveys, interviews, and data analysis tools to gather and analyze data. Prepare a comprehensive report outlining key findings, insights, and recommendations that can guide business strategies and product development. Present findings to stakeholders, highlighting opportunities for growth and areas for improvement to enhance the company’s market positioning.",
     },
     "task-5": {
       id: "task-5",
@@ -59,7 +59,7 @@ const initialBoardData: BoardData = {
         "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=2970&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       ],
       description:
-        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nihil possimus accusamus voluptate ad",
+        "Design and implement a comprehensive customer feedback survey aimed at gauging satisfaction levels, identifying pain points, and gathering suggestions for improvement. Create clear and concise questions that cover various aspects of the customer experience, from product quality to service interactions.",
     },
     "task-6": {
       id: "task-6",
@@ -67,7 +67,7 @@ const initialBoardData: BoardData = {
         "Design a Robust Database Schema that Supports Future Scalability and Optimizes Query Performance for High Traffic",
       img: null,
       description:
-        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nihil possimus accusamus voluptate ad",
+        "Develop and implement an employee training program focused on enhancing skills and promoting professional growth. Identify training needs through assessments and feedback from staff and management. Create a curriculum that includes workshops, online courses, and hands-on training sessions tailored to various skill levels. Monitor progress through assessments and feedback, and adjust the program as needed to ensure it meets the evolving needs of the organization and its workforce.",
     },
     "task-7": {
       id: "task-7",
@@ -75,7 +75,7 @@ const initialBoardData: BoardData = {
         "Develop a Comprehensive User Authentication Flow with Multi-Factor Authentication and Social Login Options",
       img: null,
       description:
-        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nihil possimus accusamus voluptate ad",
+        "Lead the development of a mobile application that provides users with a seamless experience while accessing company services. Collaborate with designers to create user-friendly interfaces and with developers to ensure smooth functionality. Conduct thorough testing to identify and resolve any bugs or issues before launch. Gather user feedback post-launch to implement necessary updates and enhancements, ensuring the app continues to meet user needs and remains competitive in the market.",
     },
   },
   columns: {

@@ -154,19 +154,6 @@ const CreateTaskForm: React.FC<CreateTaskFormProps> = ({
         </Form.Item>
 
         <div className="createTask__imageContainer">
-          {images.map((image, index) => {
-            return (
-              <div className="createTask__image">
-                <img src={URL.createObjectURL(image)} />
-                <div
-                  className="createTask__deleteIconContainer"
-                  onClick={() => handleDeleteImage(index)}
-                >
-                  <CloseOutlined className="createTask__deleteIcon" />
-                </div>
-              </div>
-            );
-          })}
           {existingImages?.map((image) => {
             return (
               <div className="createTask__image">
@@ -174,6 +161,19 @@ const CreateTaskForm: React.FC<CreateTaskFormProps> = ({
                 <div
                   className="createTask__deleteIconContainer"
                   onClick={() => handleDeleteExistingImage(image)}
+                >
+                  <CloseOutlined className="createTask__deleteIcon" />
+                </div>
+              </div>
+            );
+          })}
+          {images.map((image, index) => {
+            return (
+              <div className="createTask__image">
+                <img src={URL.createObjectURL(image)} />
+                <div
+                  className="createTask__deleteIconContainer"
+                  onClick={() => handleDeleteImage(index)}
                 >
                   <CloseOutlined className="createTask__deleteIcon" />
                 </div>
