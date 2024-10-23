@@ -48,7 +48,7 @@ const ImageCard: React.FC<ImageCardProps> = ({
     borderRadius: 10,
   };
 
-  const handleDelete = (e: React.MouseEvent<SVGElement>) => {
+  const handleDelete = (e: React.MouseEvent<HTMLElement>) => {
     e?.stopPropagation();
     if (handleImageDelete) handleImageDelete(index);
   };
