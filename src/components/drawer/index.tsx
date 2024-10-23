@@ -15,7 +15,6 @@ import { BackgroundContext } from "../../context/BackgroundContext";
 import axios from "axios";
 
 interface CustomDrawerProps {
-  open: boolean;
   onClose: () => void;
 }
 
@@ -27,7 +26,7 @@ interface Photo {
   };
 }
 
-const CustomDrawer: React.FC<CustomDrawerProps> = ({ open, onClose }) => {
+const CustomDrawer: React.FC<CustomDrawerProps> = ({ onClose }) => {
   const [page, setPage] = useState(1);
   const [hasMore, setHasMore] = useState(true);
   const [loading, setLoading] = useState(false);
@@ -40,7 +39,7 @@ const CustomDrawer: React.FC<CustomDrawerProps> = ({ open, onClose }) => {
   });
 
   const imageContainerRef = useRef<HTMLDivElement>(null);
-  const { setBackground } = useContext(BackgroundContext);
+  const { setBackground, setBackgroundImg } = useContext(BackgroundContext);
 
   const handleOnClose = () => {
     onClose();
@@ -53,6 +52,7 @@ const CustomDrawer: React.FC<CustomDrawerProps> = ({ open, onClose }) => {
 
   const handleSolidBGChange = (name: string) => {
     setBackground(name);
+    setBackgroundImg("");
   };
 
   const loadPhotos = async (page: number, query: string) => {
@@ -64,7 +64,7 @@ const CustomDrawer: React.FC<CustomDrawerProps> = ({ open, onClose }) => {
           params: {
             client_id: import.meta.env.VITE_UNSPLASH_CLIENT_KEY,
             query: query,
-            per_page: 12,
+            per_page: 30,
             page: page,
           },
         }
@@ -99,7 +99,8 @@ const CustomDrawer: React.FC<CustomDrawerProps> = ({ open, onClose }) => {
     };
 
     const divElement = imageContainerRef.current;
-    if (divElement) {
+
+    if (currentPage.toLocaleLowerCase() === "photos" && divElement) {
       divElement.addEventListener("scroll", handleScroll);
     }
 
@@ -144,7 +145,7 @@ const CustomDrawer: React.FC<CustomDrawerProps> = ({ open, onClose }) => {
 
   return (
     <Drawer
-      open={open}
+      open
       closable={false}
       onClose={handleOnClose}
       width={380}

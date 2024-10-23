@@ -59,7 +59,7 @@ const App: React.FC = () => {
           </div>
         )}
         <Header onDrawerOpen={onDrawerOpen} />
-        <CustomDrawer open={isDrawerOpen} onClose={onDrawerClose} />
+        {isDrawerOpen && <CustomDrawer onClose={onDrawerClose} />}
         <Board />
       </div>
     </BackgroundContext.Provider>

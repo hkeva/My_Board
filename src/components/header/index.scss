@@ -13,8 +13,8 @@
   }
 
   &__changeBGColorIcon {
-    height: 30px;
-    width: 30px;
+    height: 40px;
+    width: 40px;
     border-radius: 50%;
     background: linear-gradient(
       90deg,
@@ -25,6 +25,6 @@
       rgba(252, 176, 69, 1) 100%
     );
     cursor: pointer;
-    border: 2px solid #fff;
+    border: 3px solid #fff;
   }
 }

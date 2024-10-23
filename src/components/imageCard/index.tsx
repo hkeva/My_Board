@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import "./index.scss";
 import { BackgroundContext } from "../../context/BackgroundContext";
 import { IBackgroundGradients } from "../../utils/backgroundColors";
-import { MdDelete } from "react-icons/md";
+import { CloseOutlined } from "@ant-design/icons";
 
 interface ImageCardProps {
   index?: number;
@@ -65,11 +65,11 @@ const ImageCard: React.FC<ImageCardProps> = ({
         </div>
 
         {deleteIcon && (
-          <div className="imageCard__deleteIcon">
-            <MdDelete
-              style={{ color: "#CC4C4C", fontSize: "20px" }}
-              onClick={(e) => handleDelete(e)}
-            />
+          <div
+            className="imageCard__deleteIcon"
+            onClick={(e) => handleDelete(e)}
+          >
+            <CloseOutlined />
           </div>
         )}
       </div>

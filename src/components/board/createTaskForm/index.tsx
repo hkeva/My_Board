@@ -85,7 +85,7 @@ const CreateTaskForm: React.FC<CreateTaskFormProps> = ({
 
   return (
     <Modal
-      title="Upload Images"
+      title={editDetails ? "Edit task" : "Create task"}
       open={visible || editDetails ? true : false}
       footer={null}
       onCancel={handleCancel}
@@ -121,7 +121,7 @@ const CreateTaskForm: React.FC<CreateTaskFormProps> = ({
             },
           ]}
         >
-          <Input.TextArea />
+          <Input.TextArea autoSize={{ minRows: 3, maxRows: 4 }} />
         </Form.Item>
 
         <Form.Item
