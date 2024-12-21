@@ -331,7 +331,7 @@ const Board: React.FC = () => {
                             {...provided.draggableProps}
                             {...provided.dragHandleProps}
                             style={{
-                              margin: "0 8px",
+                              margin: "0",
                             }}
                           >
                             <List
