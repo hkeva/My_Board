@@ -1,50 +1,33 @@
-# React + TypeScript + Vite
+# My Board
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A drag-and-drop app that also features background-changing options.
 
-Currently, two official plugins are available:
+- **[Project Live Link](https://my-board-two.vercel.app/)**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## Expanding the ESLint configuration
+- **Drag and Drop**: Organize items with ease.
+- **Background Changing**: Change the background of the board using background colors or free images from Unsplash.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Note
 
-- Configure the top-level `parserOptions` property like this:
+- This is not a mobile-friendly app.
+- There is no backend connected, so data won't be saved.
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## How It Works
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+- The app utilizes the **Unsplash API** for fetching free images that can be used to change the background of the board.
+- To get started, you'll need to replace `VITE_UNSPLASH_CLIENT_KEY` in your `.env` file with your own Unsplash API key.
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+## Get Unsplash API Key
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+You can get your Unsplash API key by following the steps outlined in this [Medium article](https://medium.com/@humayraeva/your-first-gallery-app-using-unsplash-api-for-free-images-c6f0a71809fe).
+
+## Installation
+
+1. Clone the repository.
+2. Run project:
+   ```bash
+   yarn or npm install
+   yarn dev or npm run dev
+   ```
